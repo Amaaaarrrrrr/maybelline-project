@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAYBELLINE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="images/logo.jpeg" alt="Logo" class="logo">
+        <div class="headings">
+            <div class="main-head">
+                <h1>MAYBELLINE PRODUCTS</h1>
+            </div>
+            <div class="sub-head">
+                <h3>Get the most out of our products 💅</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for a product...">
+        <button onclick="searchProducts()">Search</button>
+    </div>
+
+    <!-- Products and Cart -->
+    <div class="container">
+        <!-- Products Section -->
+        <div class="column" id="column-info">
+            <h2>Available Products</h2>
+            <div id="productList"></div>
+        </div>
+
+        <!-- Cart Section -->
+        <div id="cartItems">
+            <h3>Your Cart</h3>
+            <!-- Cart items will be dynamically added here -->
+            <div id="cartTotal"></div>
+            <button id="checkoutButton">Checkout</button>
+            <button id="closeCartButton">Close Cart</button>
+        </div>
+    </div>
+
+    <!-- spinner -->
+    <div id="spinner" class="spinner" style="display: none;">
+        <div class="loader"></div>
+    </div>
+
+    <!-- pagination -->
+    <div id="paginationControls"></div>
+
+    <!-- Link to External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

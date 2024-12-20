@@ -1,0 +1,345 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2e1e1e;
+    color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #b69797; /* Light pink shade */
+    box-shadow: 0 2px 5px rgba(207, 11, 11, 0.1);
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.headings {
+    text-align: right;
+    margin-left: auto;
+}
+
+.main-head h1 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+}
+
+.sub-head h3 {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 60%;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #74686c; /* Bold pink */
+    color: rgb(197, 182, 182);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #7a5160; /* Darker pink on hover */
+}
+
+/* Container for Products and Cart */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 10px;
+}
+
+/* Column Styling */
+.column {
+    flex: 1;
+    margin: 0 10px;
+    background-color: #f18b8b;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(241, 8, 8, 0.1);
+    padding: 20px;
+    height: 730px;
+    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+#column-info {
+    background-color: #adaba8; /* Light cream for product section */
+    box-shadow: 0 4px 6px rgba(221, 32, 32, 0.1);
+}
+
+#column-cart {
+    background-color: #adaba8; /* Light gray for cart section */
+    box-shadow: 0 4px 6px rgba(250, 138, 10, 0.1);
+}
+
+/* Product Info Styling */
+/* General Styling for Product Cards */
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #b8a6a6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 80px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.details {
+    flex: 1;
+}
+
+.details h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.details p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #6e4c4c;
+    padding: 5px;
+}
+
+
+.details .description {
+    display: none; /* Hide description by default */
+    font-size: 0.9rem;
+    color: #574f4f;
+}
+
+
+/* Add to Cart Button Styling */
+.details button {
+    padding: 10px 20px;
+    background-color: #7d848d;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.details button:hover {
+    background-color: #27394d;
+}
+
+
+/* Cart Section Styling */
+
+#cartItems {
+    flex: 1;
+    padding: 20px;
+    background-color: #aaa6a6;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#cartItems .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #947272;
+    border-radius: 5px;
+}
+
+#cartItems .cart-item img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#cartItems .cart-item .item-details {
+    flex: 1;
+    padding-left: 10px;
+}
+
+#cartItems .cart-item .item-details h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #312b2b;
+}
+
+#cartItems .cart-item .item-details p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #665656;
+}
+
+#cartItems .cart-item button {
+    padding: 7px 14px;
+    background-color: #927b83;
+    color: white;
+    font-weight: 200;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#cartItems .cart-item button:hover {
+    background-color: #a8627c;
+}
+
+/* Buttons in Cart Section */
+#cartTotal {
+    font-size: 1.5rem;
+    color: #d81159;
+}
+
+/* Style for checkout and close cart buttons */
+#checkoutButton, #closeCartButton {
+    padding: 10px 20px;
+    display: inline-block;
+    visibility: visible;
+    opacity: 1;
+    background-color: #646d77;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#checkoutButton:hover, #closeCartButton:hover {
+    background-color: #2e353d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .column {
+        margin-bottom: 20px;
+    }
+
+    .search-bar input {
+        width: 90%;
+    }
+
+    .search-bar button {
+        width: auto;
+    }
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.quantity-controls {
+    display: flex;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+.quantity-controls button {
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.quantity-controls button:hover {
+    background-color: #ddd;
+}
+
+
+#paginationControls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.pagination-button {
+    padding: 5px 10px;
+    background-color: #c9c2c2;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pagination-button.active {
+    background-color: #524c4a;
+    color: white;
+    border-color: #33373b;
+}
+
+.pagination-button:hover:not(.active) {
+    background-color: #ddd;
+}
