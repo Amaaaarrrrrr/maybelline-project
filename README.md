@@ -1,5 +1,5 @@
 # Makeup Store Application
-Makeup Store is a simple web application that allows users to browse, search, and purchase makeup products from a specified brand. The app fetches product data from an API and displays the products with details such as image, price, and description. Users can add products to a shopping cart, modify quantities, and proceed to checkout.
+Makeup Store is a simple web application that allows users to browse, search, and purchase makeup products from the specified brand, Maybelline. The app fetches product data from an API and displays products with details such as image, price, and description. Users can add products to a shopping cart, modify quantities, and proceed to checkout.
 
 ## Features
 ### Core Features
@@ -32,10 +32,10 @@ Close Cart:
 A tallclose button hides the cart when not needed.
 
 ## Installation and Setup
-Clone or download the repository.
+1. Clone or download the repository.
 git clone https://github.com/yourusername/makeup-store.git
 
-Navigate to the project directory.
+2. Navigate to the project directory.
 cd makeup-store
 
 Ensure you have a local server running that provides the product data at http://localhost:3000/products. If using an API server like json-server, follow these steps:
@@ -62,18 +62,19 @@ Upon checkout, the cart is cleared, and users are thanked for their purchase.
 ## API Endpoints
 The following API endpoints are available:
 
-Get all products:
+-Get all products:
 GET /products
 
-Search products:
+-Search products:
 GET /products?name={query}
 
-Update cart (quantity):
+-Update cart (quantity):
 PATCH /cart/{id}
 Request Body: { "quantity": <number> }
 
-Remove item from cart:
+-Remove item from cart:
 DELETE /cart/{id}
+
 Example db.json File
 {
   "products": [

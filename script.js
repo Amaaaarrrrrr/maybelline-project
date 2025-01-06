@@ -131,10 +131,16 @@ function addToCart(name, price) {
         alert("Price not available for this product.");
         return;
     }
-    cart.push({ name, price, quantity: 1 });
+    const existingProduct = cart.find(item => item.name === name);
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        cart.push({ name, price, quantity: 1 });
+    }
     localStorage.setItem('cart', JSON.stringify(cart)); // Save cart to localStorage
     updateCart();
 }
+
 
 
 function updateCart() {
@@ -152,7 +158,7 @@ function updateCart() {
             cartItem.classList.add('cart-item');
 
             const itemDetails = document.createElement('p');
-            itemDetails.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+            itemDetails.textContent = item.name;
 
             const quantityControls = document.createElement('div');
             quantityControls.classList.add('quantity-controls');
@@ -165,8 +171,16 @@ function updateCart() {
             decreaseButton.textContent = "-";
             decreaseButton.onclick = () => changeQuantity(index, -1);
 
+            const quantityDisplay = document.createElement('span');
+            quantityDisplay.classList.add('quantity-display');
+            quantityDisplay.textContent = item.quantity;
+
             quantityControls.appendChild(decreaseButton);
             quantityControls.appendChild(increaseButton);
+            quantityControls.appendChild(quantityDisplay);
+
+            const itemPrice = document.createElement('p');
+            itemPrice.textContent = `$${(item.price * item.quantity).toFixed(2)}`;
 
             const removeButton = document.createElement('button');
             removeButton.textContent = "Remove";
@@ -176,6 +190,7 @@ function updateCart() {
             cartItem.appendChild(quantityControls);
             cartItem.appendChild(removeButton);
             cartItems.appendChild(cartItem);
+            
             total += item.price * item.quantity;
         });
 
@@ -214,14 +229,12 @@ closeCartButton.onclick = function () {
 // change quantity
 function changeQuantity(index, change) {
     const item = cart[index];
-    item.quantity += change;
-
-    // Remove the item if quantity drops to zero or below
-    if (item.quantity <= 0) {
-        cart.splice(index, 1);
+    if (item.quantity + change > 0) {
+        item.quantity += change;
+    } else {
+        cart.splice(index, 1); // Remove item if quantity goes to zero
     }
-
-    updateCart(); // Refresh the cart display
+    updateCart();
 }
 
 
