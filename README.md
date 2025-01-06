@@ -57,7 +57,19 @@ View the cart, modify quantities, remove items, and proceed to checkout.
 Upon checkout, the cart is cleared, and users are thanked for their purchase.
 
 ## Project Structure
-/makeup-store |-- index.html # Main HTML file |-- /css | |-- styles.css # Styles for the application |-- /images | |-- placeholder.jpg # Placeholder image for products | |-- logo.png # Logo image for the app |-- /src | |-- script.js # JavaScript file handling product data and interactions |-- README.md # Project documentation (this file)
+MAYBELLINE-2/  
+│  
+├── .vscode/  
+│   └── settings.json        # VS Code configuration file for project-specific settings  
+│  
+├── images/  
+│   └── logo.jpeg            # Logo image used in the project  
+│  
+├── index.html               # Main HTML file – structure of the web page  
+├── README.md                # Project documentation – overview, setup instructions, etc.  
+├── script.js                # JavaScript file – handles interactive functionality and logic  
+└── style.css                # CSS file – styles and layouts for the web page
+
 
 ## API Endpoints
 The following API endpoints are available:
