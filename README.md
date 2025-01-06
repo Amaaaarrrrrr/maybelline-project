@@ -1,6 +1,8 @@
 # Makeup Store Application
 Makeup Store is a simple web application that allows users to browse, search, and purchase makeup products from the specified brand, Maybelline. The app fetches product data from an API and displays products with details such as image, price, and description. Users can add products to a shopping cart, modify quantities, and proceed to checkout.
 
+---
+
 ## Features
 ### Core Features
 Product Display:
@@ -21,6 +23,8 @@ Users can view their cart, modify quantities, and remove items.
 Checkout:
 A checkout button allows users to complete their purchase and clear the cart.
 
+---
+
 ## Bonus Features
 Save Cart Data:
 Cart items are saved to localStorage and persist between page loads.
@@ -29,32 +33,57 @@ Dynamic Quantity Adjustment:
 Users can increase or decrease product quantities in the cart.
 
 Close Cart:
-A tallclose button hides the cart when not needed.
+A button hides the cart when not needed.
+
+---
 
 ## Installation and Setup
 1. Clone or download the repository.
-git clone https://github.com/yourusername/makeup-store.git
+git clone https://github.com/yourusername/maybelline-project.git
 
 2. Navigate to the project directory.
-cd makeup-store
+cd maybelline-project
 
-Ensure you have a local server running that provides the product data at http://localhost:3000/products. If using an API server like json-server, follow these steps:
+1. Run a local server to serve the HTML file:
 
-## Install dependencies:
-npm install -g json-server
-Create a db.json file and seed it with your product data (e.g., name, price, description, image_link).
+Option 1: Use Live Server in VS Code.
 
-Start the server:
-json-server --watch db.json --port 3000
-Open index.html in your web browser to view the app.
+Option 2: Use Python’s simple HTTP server:
+python -m http.server
+
+Option 3: Alternatively, open index.html directly in your web browser.
+
+---
 
 ## Usage
-On the homepage, products from the specified brand are displayed.
-Use the search bar to filter products by name.
-Click "Add to Cart" to add a product to the shopping cart.
-Navigate through pages of products using pagination controls.
-View the cart, modify quantities, remove items, and proceed to checkout.
-Upon checkout, the cart is cleared, and users are thanked for their purchase.
+-On the homepage, products from the specified brand are displayed.
+-Use the search bar to filter products by name.
+-Click "Add to Cart" to add a product to the shopping cart.
+-Navigate through pages of products using pagination controls.
+-View the cart, modify quantities, remove items, and proceed to checkout.
+-Upon checkout, the cart is cleared, and users are thanked for their purchase.
+
+---
+
+## API Integration
+
+This project fetches product data from the following API:
+https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline
+
+### API Endpoints
+-Get all products:
+GET /products
+
+-Search products by name:
+GET /products?name={query}
+
+-Update cart (quantity):
+PATCH /cart/{id}
+
+-Remove item from cart:
+DELETE /cart/{id}
+
+---
 
 ## Project Structure
 MAYBELLINE-2/  
@@ -71,23 +100,12 @@ MAYBELLINE-2/
 └── style.css                # CSS file – styles and layouts for the web page
 
 
-## API Endpoints
-The following API endpoints are available:
+---
 
--Get all products:
-GET /products
+### Example db.json File(Optional if using json-server)
 
--Search products:
-GET /products?name={query}
+If you prefer to simulate an API locally using json-server, here’s an example db.json file:
 
--Update cart (quantity):
-PATCH /cart/{id}
-Request Body: { "quantity": <number> }
-
--Remove item from cart:
-DELETE /cart/{id}
-
-Example db.json File
 {
   "products": [
     {
@@ -107,15 +125,22 @@ Example db.json File
   ]
 }
 
-## Technologies Used
-HTML for the structure of the web page.
-CSS for styling and layout.
-JavaScript for fetching and displaying product data, handling user interactions, and managing the shopping cart.
-Fetch API to interact with a backend server for product data (GET, PATCH, DELETE requests).
+To start json-server:
+json-server --watch db.json --port 3000
 
+---
+
+## Technologies Used
+-HTML -for structuring the web page.
+-CSS -for styling and layout.
+-JavaScript -for fetching and displaying product data, handling user interactions, and managing the shopping cart.
+-Fetch API -to interact with a backend server for product data (GET, PATCH, DELETE requests).
+
+---
 
 ### Author
 JOY MUTANU
+Feel free to connect and contribute!
 
 
 
